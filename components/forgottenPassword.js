@@ -7,14 +7,25 @@ import {
   StyleSheet,
 } from "react-native";
 import Button from "./button.js";
+import { useNavigation } from "@react-navigation/native";
 
 const ForgottenPassword = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.mainContainer}>
       <View style={styles.container}>
         <Text style={styles.text}>Enter your phone number</Text>
-        <TextInput placeholder="Phone Number" style={styles.input} keyboardType="numeric"/>
-        <Button title="Next" buttonStyle={styles.button} textStyle={styles.buttonText}/>
+        <TextInput
+          placeholder="Phone Number"
+          style={styles.input}
+          keyboardType="numeric"
+        />
+        <Button
+          title="Next"
+          buttonStyle={styles.button}
+          textStyle={styles.buttonText}
+          pressed={() => navigation.navigate("OTP")}
+        />
       </View>
     </SafeAreaView>
   );

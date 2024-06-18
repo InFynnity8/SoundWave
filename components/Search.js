@@ -20,7 +20,7 @@ const Search = () => {
             <AntDesign name="leftcircle" size={27} color="#0A4A3B" />
           </Pressable>
           <Pressable>
-            <AntDesign name="download" size={24} color="black" />
+            <AntDesign name="download" size={24} color="#0A4A3B" />
           </Pressable>
         </View>
         <View style={styles.content}>

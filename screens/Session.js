@@ -31,8 +31,9 @@ import Storage from "../components/Storage.js";
 import Analytics from "../components/Analytics.js";
 import Advertising from "../components/Advertising.js";
 import Legal from "../components/Legal.js";
-import OTPInputComponent from "../components/OTP.js";
+import SignUp from "./SignUp.js"
 import ForgottenPassword from "../components/forgottenPassword.js";
+import OTP from "../components/OTP.js";
 
 const Tab = createBottomTabNavigator();
 
@@ -225,6 +226,21 @@ const Session = () => {
           component={Legal}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="SignUp"
+          component={SignUp}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ForgottenPassword"
+          component={ForgottenPassword}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="OTP"
+          component={OTP}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -232,4 +248,3 @@ const Session = () => {
 
 export default Session;
 
-const styles = StyleSheet.create({});

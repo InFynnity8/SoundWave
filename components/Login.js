@@ -5,36 +5,50 @@ import {
   Image,
   SafeAreaView,
   StyleSheet,
+  Pressable,
 } from "react-native";
 import Button from "./button.js";
 import { useNavigation } from "@react-navigation/native";
-
 
 const Login = () => {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <View style={styles.container}> 
+      <View style={styles.container}>
         <View style={styles.logoContainer}>
           <Image source={require("../assets/Group 3-1.png")} />
           <Text style={styles.text}>SoundWave</Text>
         </View>
-        <View  style={styles.form}>
-          <TextInput placeholder="Username" style = {styles.input}/>
-          <TextInput secureTextEntry={true} placeholder="Password" style = {styles.input}/>
+        <View style={styles.form}>
+          <TextInput placeholder="Username" style={styles.input} />
+          <TextInput
+            secureTextEntry={true}
+            placeholder="Password"
+            style={styles.input}
+          />
+          <Pressable onPress={() => navigation.navigate("ForgottenPassword")}>
           <Text>Forgot your password?</Text>
+          </Pressable>
           <Button
             title="LOG IN"
             textStyle={styles.buttonText}
             buttonStyle={styles.button}
-            pressed={()=>navigation.navigate("Main")}
+            pressed={() => navigation.navigate("Main")}
           />
-          <Text>Don't have an account? Sign up</Text>
+          <Pressable
+            style={styles.para}
+            onPress={() => navigation.navigate("SignUp")}
+          >
+            <Text>Don't have an account? </Text>
+            <Text style={styles.linkText}>Sign up</Text>
+          </Pressable>
         </View>
       </View>
-        <View>
-            <Text style={styles.help}>Need Help?</Text>
-        </View>
+      <View>
+        <Pressable>
+          <Text style={styles.help}>Need Help?</Text>
+        </Pressable>
+      </View>
     </SafeAreaView>
   );
 };
@@ -42,12 +56,16 @@ const Login = () => {
 export default Login;
 
 const styles = StyleSheet.create({
-    mainContainer: {
-        flex: 1,
-    },
-    help: {
-        margin: 20,
-    },
+  mainContainer: {
+    flex: 1,
+    backgroundColor: "white",
+  },
+  help: {
+    margin: 20,
+  },
+  para: {
+    flexDirection: "row",
+  },
   container: {
     flex: 1,
     padding: 50,
@@ -57,7 +75,7 @@ const styles = StyleSheet.create({
   logoContainer: {
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: 50
+    marginBottom: 50,
   },
   form: {
     height: 400,
@@ -77,6 +95,10 @@ const styles = StyleSheet.create({
     fontSize: 23,
     fontStyle: "italic",
     fontWeight: "700",
+  },
+  linkText: {
+    color: "#0A4A3B",
+    fontWeight: "500",
   },
   button: {
     backgroundColor: "rgba(14, 187, 190, 0.19)",
