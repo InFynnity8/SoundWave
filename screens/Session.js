@@ -12,6 +12,7 @@ import {
 } from "@expo/vector-icons";
 import Home from "../components/Home.js";
 import Search from "../components/Search.js";
+import Player from "./Player.js";
 import Library from "../components/Library.js";
 import Profile from "../components/Profile.js";
 import Albums from "./Albums.js";
@@ -154,6 +155,11 @@ const Session = () => {
         <Stack.Screen
           name="Main"
           component={BottomTabs}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Player"
+          component={Player}
           options={{ headerShown: false }}
         />
         <Stack.Screen
