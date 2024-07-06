@@ -14,7 +14,7 @@ const Genre = () => {
             </View>
             <View style={[styles.genreInnerBox, {backgroundColor: "#2a5585"}]}>
               <Text style={styles.boxText}>R & B</Text>
-              <Image source={require("../assets/r&b.jpg")} style={styles.image}/>
+              <Image source={require("../assets/indie.webp")} style={styles.image}/>
             </View>
           </View>
           <View>

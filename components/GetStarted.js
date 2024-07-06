@@ -21,11 +21,12 @@ const GetStarted = () => {
         colors={["#169CA1", "#169CA1","#071f1b", "black"]}
         style={styles.linearGradient}
       >
-        <ImageBackground
-          source={require("../assets/backgroundimage.jpg")}
-          resizeMode="cover"
+        {/* <ImageBackground
+          source={require("../assets/backgroundimage.webp")}
+          resizeMode= "cover"
           style={styles.imageContainer}
-        />
+        /> */}
+        
          <View style={styles.bottomContainer}>
           <Text style={styles.text}>
             From the <Text style={styles.textCustom}>latest</Text> to the
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   imageContainer: {
-    flex: 2,
+    flex: 1,
     justifyContent: "flex-end",
     opacity: 0.05,
   },
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
   },
   bottomContainer: {
     backgroundColor: "black",
-    width: "98%",
+    width: "100%",
     height: "40%",
     borderTopRightRadius: "30px",
     borderTopLeftRadius: "30px",
@@ -110,8 +111,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     position: "absolute",
     bottom: 0,
-    marginHorizontal: 5,
-  },
+  }, 
   button: {
     backgroundColor: "#169CA1",
     color: "white",
